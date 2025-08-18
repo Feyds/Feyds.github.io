@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kaan Kahraman — Personal Site</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #111;
+      color: #f1f1f1;
+      text-align: center;
+    }
+    .container {
+      max-width: 500px;
+      padding: 20px;
+    }
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #6c63ff; /* uyumlu accent rengi */
+      margin-bottom: 1em;
+      box-shadow: 0 0 15px rgba(108, 99, 255, 0.7);
+      transition: box-shadow 0.3s ease;
+    }
+    .profile-pic:hover {
+      box-shadow: 0 0 25px rgba(108, 99, 255, 1);
+    }
+    h1 {
+      margin-bottom: 0.3em;
+    }
+    p.bio {
+      margin: 0.5em 0 1.5em;
+      font-size: 1.1em;
+      color: #ccc;
+    }
+    .links a {
+      display: inline-block;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    .links img {
+      width: 32px;
+      height: 32px;
+      filter: invert(80%);
+      transition: transform 0.2s;
+    }
+    .links img:hover {
+      transform: scale(1.1);
+      filter: invert(60%) sepia(80%) saturate(500%) hue-rotate(220deg);
+    }
+    footer {
+      margin-top: 2em;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="ben.jpg" alt="Kaan Kahraman" class="profile-pic" />
+    <h1>Kaan Kahraman</h1>
+    <p class="bio">Hi, I'm Kaan Kahraman — a high school robotics and software enthusiast.</p>
+    <div class="links">
+      <a href="https://instagram.com/kaannkahramann" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
+      </a>
+      <a href="https://github.com/feyds" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" />
+      </a>
+      <a href="https://www.linkedin.com/in/kaan-kahraman-1aa41037b/" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
+      </a>
+    </div>
+    <footer>© <span id="year"></span> Kaan Kahraman</footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
