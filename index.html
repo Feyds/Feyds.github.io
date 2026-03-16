@@ -1,134 +1,508 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="google-adsense-account" content="ca-pub-1844192342358779">
-  <title>Kaan Kahraman</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background: #111;
-      color: #f1f1f1;
-      text-align: center;
-      padding: 20px;
-    }
-    .container {
-      max-width: 500px;
-      width: 100%;
-      padding: 20px;
-    }
-    .profile-pic {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #6c63ff;
-      margin-bottom: 1em;
-      box-shadow: 0 0 15px rgba(108, 99, 255, 0.7);
-      transition: box-shadow 0.3s ease;
-    }
-    .profile-pic:hover {
-      box-shadow: 0 0 25px rgba(108, 99, 255, 1);
-    }
-    h1 {
-      margin-bottom: 0.3em;
-    }
-    p.bio {
-      margin: 0.5em 0 1.5em;
-      font-size: 1.1em;
-      color: #ccc;
-    }
-    .links a {
-      display: inline-block;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-    .links img {
-      width: 32px;
-      height: 32px;
-      filter: invert(80%);
-      transition: transform 0.2s;
-    }
-    .links img:hover {
-      transform: scale(1.1);
-      filter: invert(60%) sepia(80%) saturate(500%) hue-rotate(220deg);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaan Kahraman</title>
+    <style>
+        :root {
+            --bg-color: #0A1128; 
+            --section-bg: #0d1530;
+            --text-color: #E2E8F0; 
+            --muted-text: #94A3B8;
+            --primary-blue: #1E40AF; 
+            --accent-blue: #3B82F6; 
+            --hover-blue: #60A5FA; 
+        }
 
-    .projects {
-      margin-top: 2em;
-      padding: 20px;
-      background: #1a1a1a;
-      border-radius: 16px;
-      border: 1px solid #333;
-      box-shadow: 0 0 20px rgba(108, 99, 255, 0.4);
-    }
-    .projects h2 {
-      font-size: 1.8em;
-      color: #6c63ff;
-      margin-bottom: 1em;
-    }
-    .projects .tools a {
-      display: inline-block;
-      margin: 10px 10px;
-      padding: 12px 20px;
-      background: #6c63ff;
-      color: white;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s, transform 0.2s;
-    }
-    .projects .tools a:hover {
-      background: #5b52d6;
-      transform: scale(1.05);
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
 
-    footer {
-      margin-top: 2em;
-      font-size: 0.9em;
-      color: #aaa;
-    }
-  </style>
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent-blue);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title span {
+            color: var(--accent-blue);
+        }
+
+        section {
+            padding: 5rem 10%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.5rem 10%;
+            align-items: center;
+            background-color: rgba(10, 17, 40, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--accent-blue);
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 80px;
+            gap: 2rem;
+        }
+
+        .hero-content {
+            flex: 2;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-blue);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        .hero h3 {
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            margin-bottom: 1rem;
+            color: #ffffff;
+            line-height: 1.1;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.2rem, 3vw, 2.2rem);
+            color: var(--muted-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            color: #CBD5E1;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: transparent;
+            color: var(--accent-blue);
+            border: 2px solid var(--accent-blue);
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-blue);
+            color: var(--bg-color);
+        }
+
+        .about-section {
+            background-color: var(--section-bg);
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: #CBD5E1;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background-color: rgba(30, 64, 175, 0.05);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: var(--accent-blue);
+        }
+
+        .skill-category h3 {
+            color: var(--accent-blue);
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            padding-bottom: 0.5rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-list li::before {
+            content: "▹";
+            color: var(--accent-blue);
+            font-weight: bold;
+            display: inline-block;
+            width: 1.5rem;
+        }
+
+        .projects-section {
+            background-color: var(--section-bg);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background-color: var(--bg-color);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-blue);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .folder-icon {
+            font-size: 2rem;
+            color: var(--accent-blue);
+        }
+
+        .project-links a {
+            margin-left: 1rem;
+            font-size: 1.2rem;
+            color: var(--muted-text);
+        }
+
+        .project-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--muted-text);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .project-tech {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: var(--accent-blue);
+        }
+
+        .contact-section {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-section p {
+            color: var(--muted-text);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--muted-text);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                height: auto;
+                padding-bottom: 5rem;
+            }
+            .hero p { margin-left: auto; margin-right: auto; }
+            .profile-img { width: 220px; height: 220px; margin-top: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            section { padding: 4rem 5%; }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <img src="ben.jpg" alt="Kaan Kahraman" class="profile-pic" />
-    <h1>Kaan Kahraman</h1>
-    <p class="bio">16 yo, robotics and software enthusiast</p>
 
-    <!-- Sosyal linkler -->
-    <div class="links">
-      <a href="https://instagram.com/kaannkahramann" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
-      </a>
-      <a href="https://open.spotify.com/user/nu1gpyzw9rpcfafingsyhds11?si=de300b3c47c94e25" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spotify.svg" alt="Spotify" />
-      </a>
-      <a href="https://github.com/feyds" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" />
-      </a>
-      <a href="https://www.linkedin.com/in/kaan-kahraman-1aa41037b/" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
-      </a>
-    </div>
+    <nav>
+        <div class="logo">kaankahraman.me</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-    <div class="projects">
-      <h2>My Tools</h2>
-      <div class="tools">
-        <a href="https://textsummarizer.kaankahraman.me" target="_blank">🧠 Text Summarizer</a>
-        <a href="https://rewriter.kaankahraman.me" target="_blank">✍️ Text Rewriter</a>
-      </div>
-    </div>
+    <section class="hero">
+        <div class="hero-content">
+            <h3>HELLO, I'M</h3>
+            <h1>Kaan Kahraman.</h1>
+            <h2>Full Stack Developer - Robotics Enthusiast</h2>
+            <p>
+                An 11th-grade student involved in software for over six years. Beyond Full Stack development, I’m the captain, programmer, and driver of FRC 10542 Eagle Warriors. I lead robot design, planning, and electronic systems architecture.
+            </p>
+            <div>
+                <a href="#projects" class="btn">Check Out My Work!</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="ben.png" alt="Kaan Kahraman" class="profile-img">
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <div class="about-text">
+            <p>
+                My journey into software development started around 2019-2020. I have expanded my toolkit from hardware-level C and C++ to modern web-based Node.js and Python, creating systems that bridge the gap between complex algorithms and practical applications.
+            </p>
+            <p>
+                Currently, I lead FRC 10542 Eagle Warriors as Captain and Lead Software Developer. I play an active role in planning and design, including strategic choices like our polycarbonate intake system.
+            </p>
+            <p>
+                My core focus is software architecture. I write highly optimized, non-command-based code, controlling all subsystems directly via Robot.java for maximum efficiency and readability.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">My <span>Technical Stack</span></h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Systems & Low-Level</h3>
+                <ul class="skill-list">
+                    <li>C & C++</li>
+                    <li>C#</li>
+                    <li>Java (Architecture Focus)</li>
+                    <li>Object-Oriented Design</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Backend & Logic</h3>
+                <ul class="skill-list">
+                    <li>Python (Data & AI)</li>
+                    <li>Node.js</li>
+                    <li>PHP</li>
+                    <li>Algorithm Optimization</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Frontend Web</h3>
+                <ul class="skill-list">
+                    <li>JavaScript</li>
+                    <li>HTML & CSS</li>
+                    <li>Bootstrap</li>
+                    <li>Responsive UI</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Robotics & Electronics</h3>
+                <ul class="skill-list">
+                    <li>Electronics & Circuitry</li>
+                    <li>Advanced Robot Programming</li>
+                    <li>Custom Control Architectures</li>
+                    <li>Hardware API Integration</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <h2 class="section-title">Featured <span>Projects</span></h2>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="folder-icon">🤖</div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                <h3 class="project-title">FRC Robot 2025</h3>
+                <p class="project-description">
+                    Developed a highly optimized, non-command-based architecture for FRC Team 10542. Managed direct calls to all subsystems natively via Robot.java with Revlib and Phoenix v6.
+                </p>
+                <ul class="project-tech">
+                    <li>Java</li>
+                    <li>Electronics</li>
+                    <li>Hardware Control</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="folder-icon">🤖</div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                <h3 class="project-title">FRC Robot 2026</h3>
+                <p class="project-description">
+                    Implementation of the 2026 robot control systems, optimizing SparkMax controllers and eliminating drivetrain simulation overhead for field performance.
+                </p>
+                <ul class="project-tech">
+                    <li>Java</li>
+                    <li>Electronics</li>
+                    <li>Hardware Control</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="folder-icon">🪐</div>
+                    <div class="project-links">
+                        <a href="https://github.com/Feyds/n-body-simulation/" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                <h3 class="project-title">N-Body Astrophysics Simulation</h3>
+                <p class="project-description">
+                    A multi-body physics engine that visualizes orbital trajectories using Newton's Law of Universal Gravitation computed in Python and rendered via JS Canvas.
+                </p>
+                <ul class="project-tech">
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>HTML5 Canvas</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="folder-icon">📈</div>
+                    <div class="project-links">
+                        <a href="https://github.com/Feyds/algotrade-dashboard/" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                <h3 class="project-title">Algorithmic Trading Dashboard</h3>
+                <p class="project-description">
+                    Full-stack web application fetching real-time market data to apply SMA crossover algorithmic trading logic with interactive charting.
+                </p>
+                <ul class="project-tech">
+                    <li>Node.js / PHP</li>
+                    <li>Python</li>
+                    <li>Bootstrap</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <p>
+            Whether you have a question about my projects, FRC experience, or want to discuss engineering opportunities, my inbox is always open.
+        </p>
+        <a href="mailto:kaannkahramannn@gmail.com" class="btn">Contact</a>
+    </section>
 
     <footer>
-      Built by Kaan Kahraman
+        <p>Kaan Kahraman &copy; 2026</p>
     </footer>
-  </div>
+
 </body>
 </html>
