@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaan Kahraman</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --bg-color: #0A1128; 
@@ -310,6 +311,24 @@
             border-top: 1px solid rgba(59, 130, 246, 0.1);
         }
 
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--muted-text);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-blue);
+            transform: translateY(-3px);
+        }
+
         @media (max-width: 992px) {
             .hero {
                 flex-direction: column-reverse;
@@ -426,7 +445,7 @@
                 </div>
                 <h3 class="project-title">FRC Robot 2025</h3>
                 <p class="project-description">
-                    Developed a highly optimized, non-command-based architecture for FRC Team 10542. Managed direct calls to all subsystems natively via Robot.java with Revlib and Phoenix v6.
+                    During my rookie year, I developed a highly advanced software architecture for a mechanically simple robot. I bypassed standard command-based structures for a custom, streamlined approach managed directly via Robot.java, and engineered a comprehensive custom logging system for real-time telemetry and debugging.
                 </p>
                 <ul class="project-tech">
                     <li>Java</li>
@@ -444,7 +463,8 @@
                 </div>
                 <h3 class="project-title">FRC Robot 2026</h3>
                 <p class="project-description">
-                    Implementation of the 2026 robot control systems, optimizing SparkMax controllers and eliminating drivetrain simulation overhead for field performance.
+                    The culmination of advanced control systems and autonomous capabilities. I integrated complex features including real-time Computer Vision, advanced Odometry, Pose Estimation, and precise PID controllers within a custom non-command-based architecture for flawless field navigation.
+                </p>
                 </p>
                 <ul class="project-tech">
                     <li>Java</li>
@@ -489,6 +509,42 @@
                 </ul>
             </div>
 
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="folder-icon">⚡</div>
+                    <div class="project-links">
+                        <a href="https://github.com/Feyds/smartgym-tracker/" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                <h3 class="project-title">SmartGym Tracker (IoT)</h3>
+                <p class="project-description">
+                    An embedded system designed to track weightlifting repetitions. Uses an MPU6050 accelerometer and custom C++ state machine logic to filter noise and calculate concentric/eccentric phases via I2C communication.
+                </p>
+                <ul class="project-tech">
+                    <li>C++</li>
+                    <li>ESP32 / Arduino</li>
+                    <li>Signal Processing</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="folder-icon">🧠</div>
+                    <div class="project-links">
+                        <a href="https://github.com/Feyds/autonomous-pathfinding/" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                <h3 class="project-title">Autonomous Pathfinding Simulation</h3>
+                <p class="project-description">
+                    An interactive, web-based simulation of the A* (A-Star) search algorithm. Demonstrates how autonomous robots and vehicles calculate optimal routes around dynamic obstacles using Manhattan distance heuristics.
+                </p>
+                <ul class="project-tech">
+                    <li>JavaScript</li>
+                    <li>Algorithms</li>
+                    <li>CSS Grid</li>
+                </ul>
+            </div>
+
         </div>
     </section>
 
@@ -502,6 +558,11 @@
 
     <footer>
         <p>Kaan Kahraman &copy; 2026</p>
+        <div class="social-links">
+            <a href="https://github.com/Feyds" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <!-- <a href="https://www.linkedin.com/in/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a> -->
+            <a href="mailto:kaannkahramannn@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
     </footer>
 
 </body>
